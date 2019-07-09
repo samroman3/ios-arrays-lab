@@ -80,6 +80,18 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+let flower = "🌷"
+let dirt = "dirt"
+
+for (i, j) in garden.enumerated() {
+if j == flower {
+basket.append(j)
+garden[i] = "dirt"
+}
+j.replacingOccurrences(of: flower, with: dirt)
+}
+
+print(basket.count)
 ```
 
 ## Question 6
@@ -447,8 +459,27 @@ index += 1
 
 Print out the sum of the diagonals of `myMatrix`.
 
-`var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
+```var myMatrix = 
+[[10, 14, 12], 
+[91, 1, 9], 
+[31, 3, 21]]
 
+var topLeftDiagonal = 0
+var topRightDiagonal = 0
+
+for (outerIndex,arrayElement) in myMatrix.enumerated() {
+for(innerIndex,IntElement) in arrayElement.enumerated() {
+if innerIndex == outerIndex {
+topLeftDiagonal += IntElement }
+if innerIndex + outerIndex == myMatrix.count - 1 {
+topRightDiagonal += IntElement
+}
+}
+}
+
+print(topLeftDiagonal)
+print(topRightDiagonal)
+```
 
 ## Question 27
 
