@@ -408,6 +408,22 @@ Input: `[0..<3 , 2..<10, -4..<6, 13..<14]`
 
 Output: `[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,13]`
 
+```
+var ranges = [0..<3 , 2..<10, -4..<6, 13..<14]
+var result = [Int]()
+var noDuplicate = [Int]()
+
+for num in ranges{
+for i in num {
+result += [i]
+}
+}
+for i in result.sorted() where noDuplicate.contains(i) != true {
+noDuplicate += [i]
+}
+print(noDuplicate)
+```
+
 
 ## Question 24
 
